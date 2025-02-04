@@ -1,0 +1,12 @@
+on:
+  push:
+
+jobs:
+  show-matrix-of-objects:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        containers: [{user: "Bob", age: 10}, {user: "Dave", age: 20}]
+
+    steps:
+      - run: echo ${{ matrix.containers.user }} - ${{ matrix.containers.age }}
